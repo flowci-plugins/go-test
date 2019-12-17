@@ -16,7 +16,6 @@ def upload(path):
 def stats():
     percent = sys.argv[1]
     percent = percent.rstrip('%')
-    percent = (float(percent) / 100)
 
     body = {
         "type": "go-test",
