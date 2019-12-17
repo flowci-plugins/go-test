@@ -35,7 +35,7 @@ script: |
   $GOTEST ./... -v -coverprofile=ci-coverage.out
 
   $GOTOOL cover -html=ci-coverage.out -o ci-coverage.html
-  percent = $($GOTOOL cover -func=ci-coverage.out | grep 'total:' | awk '{print $3}')
-  python3 $plugindir/report.py ${percent}
+  percent=$($GOTOOL cover -func=ci-coverage.out | grep 'total:' | awk '{print $3}')
+  python3 $plugindir/report.py $percent
 
   
