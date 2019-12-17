@@ -24,7 +24,6 @@ script: |
 
   GOCMD=go
   GOTEST=${GOCMD} test
-  GOCLEAN=${GOCMD} clean
   GOGEN=${GOCMD} generate
   GOTOOL=${GOCMD} tool
 
@@ -32,10 +31,9 @@ script: |
     GOTEST=${GOTEST} -count=1
   fi
 
-  ${GOCLEAN} -modcache
   ${GOGEN} ./...
   ${GOTEST} ./... -v -coverprofile=ci-coverage.out
-  
+
   ${GOTOOL} cover -html=ci-coverage.out -o ci-coverage.html
   percent = $(${GOTOOL} cover -func=ci-coverage.out | grep 'total:' | awk '{print $3}')
   python3 ${plugindir}/report.py ${percent}
