@@ -12,14 +12,11 @@ inputs:
   required: false
   value: "false"
 
-# stats:
-# - name: "junit"
-#   desc: "junit"
-#   fields:
-#     - "success"
-#     - "failures"
-#     - "errors"
-#     - "skipped"
+stats:
+- name: "go-coverage"
+  desc: "go unit test coverage"
+  fields:
+    - "coverage"
 
 script: |
   cd ${FLOWCI_GIT_REPO}
@@ -38,5 +35,9 @@ script: |
   ${GOCLEAN} -modcache
   ${GOGEN} ./...
   ${GOTEST} ./... -v -coverprofile=ci-coverage.out
+  
   ${GOTOOL} cover -html=ci-coverage.out -o ci-coverage.html
-  ${GOTOOL} cover -func=ci-coverage.out | grep 'total:'
+  percent = $(${GOTOOL} cover -func=ci-coverage.out | grep 'total:' | awk '{print $3}')
+  python3 ${plugindir}/report.py ${percent}
+
+  
