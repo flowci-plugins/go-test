@@ -18,7 +18,7 @@ def stats():
     percent = percent.rstrip('%')
 
     body = {
-        "type": "go-test",
+        "type": "go-coverage",
         "data": {
             "coverage": percent
         }
