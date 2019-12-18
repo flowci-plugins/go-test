@@ -15,6 +15,7 @@ inputs:
 stats:
 - name: "go-coverage"
   desc: "go unit test coverage"
+  percent: "true"
   fields:
     - "coverage"
 
