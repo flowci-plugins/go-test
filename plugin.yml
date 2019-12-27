@@ -1,6 +1,6 @@
 name: go-test
 version: 1.0.0
-icon: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Maven_logo.svg"
+icon: "golang-icon.svg"
 
 inputs:
 - name: FLOWCI_GIT_REPO
