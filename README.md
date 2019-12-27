@@ -30,3 +30,5 @@ steps:
 ## Screenshot
 
 #### Coverage report
+
+![](https://raw.githubusercontent.com/gy2006/flowci-plugin-go-test/master/resources/coverage-report.png)

@@ -1,6 +1,6 @@
 name: go-test
 version: 1.0.0
-icon: "golang-icon.svg"
+icon: "resources/golang-icon.svg"
 
 inputs:
 - name: FLOWCI_GIT_REPO
