@@ -2,11 +2,12 @@
 
 ## Description
 
-ci plugin to run go test and upload test report
+ci plugin to run go test, upload coverage percentage and report
 
 ## Inputs
 
-- `FLOWCI_GIT_REPO` (required): git repo name  
+- `FLOWCI_GIT_REPO` (required): git repo name
+- `WITH_GO_CACHE`: enable or disable go cache, default value is `false` for disalbe
 
 ## How to use it
 
@@ -14,17 +15,17 @@ ci plugin to run go test and upload test report
 #  Example that togeher with git clone plugin
 
 envs:
-  FLOWCI_GIT_URL: "https://github.com/FlowCI/spring-petclinic-sample.git"
+  FLOWCI_GIT_URL: "https://github.com/gin-gonic/gin.git"
+  FLOWCI_GIT_REPO: "golang-gin"
   FLOWCI_GIT_BRANCH: "master"
-  FLOWCI_GIT_REPO: "spring-petclinic"
 
 steps:
   - name: clone
     plugin: 'gitclone'
     allow_failure: false
 
-  - name: run unit test
-    plugin: 'maven-test'
+  - name: test
+    plugin: go-test
 ```
 
 ## Screenshot
