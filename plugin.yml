@@ -23,11 +23,6 @@ docker:
   image: golang:1.12
 
 script: |
-  apt update
-  apt install python3-pip -y
-  pip3 install requests
-  pip3 install python-lib-flow.ci
-
   cd ${FLOWCI_GIT_REPO}
   plugindir=${FLOWCI_AGENT_PLUGIN_DIR}/go-test
 
