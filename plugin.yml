@@ -15,9 +15,6 @@ stats:
   fields:
     - "coverage"
 
-docker:
-  image: golang:1.12
-
 script: |
   cd ${FLOWCI_GIT_REPO}
   plugindir=${FLOWCI_AGENT_PLUGIN_DIR}/go-test
