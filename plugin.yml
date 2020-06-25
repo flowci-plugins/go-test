@@ -3,10 +3,6 @@ version: 1.0.0
 icon: "resources/golang-icon.svg"
 
 inputs:
-- name: FLOWCI_GIT_REPO
-  type: string
-  required: true
-
 - name: WITH_GO_CACHE
   type: string
   required: false

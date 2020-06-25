@@ -6,7 +6,6 @@ ci plugin to run go test, upload coverage percentage and report
 
 ## Inputs
 
-- `FLOWCI_GIT_REPO` (required): git repo name
 - `WITH_GO_CACHE`: enable or disable go cache, default value is `false` for disalbe
 
 ## How to use it
@@ -16,7 +15,6 @@ ci plugin to run go test, upload coverage percentage and report
 
 envs:
   FLOWCI_GIT_URL: "https://github.com/gin-gonic/gin.git"
-  FLOWCI_GIT_REPO: "golang-gin"
   FLOWCI_GIT_BRANCH: "master"
 
 steps:
