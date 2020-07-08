@@ -29,7 +29,7 @@ script: |
   fi
 
   $GOGEN ./...
-  $GOTEST ./... -v -coverprofile=ci-coverage.out
+  $GOTEST ./... -v -coverprofile=ci-coverage.out | sed ''/PASS/s//$$(printf "\033[32mPASS\033[0m")/'' | sed ''/FAIL/s//$$(printf "\033[31mFAIL\033[0m")/''
 
   $GOTOOL cover -html=ci-coverage.out -o ci-coverage.html
   percent=$($GOTOOL cover -func=ci-coverage.out | grep 'total:' | awk '{print $3}')
